@@ -52,3 +52,5 @@ abline(a = coef(res3)[1] + coef(res3)[4],
 abline(a = coef(res3)[1],
        b = coef(res3)[2],
        col = "black")
+
+## COOL COMMENT
