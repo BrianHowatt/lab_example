@@ -3,3 +3,7 @@
 # Load the built-in 'iris' dataset
 data(iris)
 summary(iris)
+
+# plot some raw data
+plot(iris$Sepal.Length, iris$Petal.Width, col = factor(iris$Species))
+
