@@ -34,3 +34,21 @@ abline(a = coef(res2)[1],
        b = coef(res2)[2],
        col = "black")
 
+
+## Add a new regression model
+plot(iris$Sepal.Length, iris$Petal.Length, col = factor(iris$Species))
+
+res3 <- lm(Petal.Length ~ Sepal.Length * Species, data = iris)
+summary(res3)
+
+abline(a = coef(res3)[1] + coef(res3)[3],
+       b = coef(res3)[2] + coef(res3)[5],
+       col = "red")
+
+abline(a = coef(res3)[1] + coef(res3)[4],
+       b = coef(res3)[2] + coef(res3)[6],
+       col = "green")
+
+abline(a = coef(res3)[1],
+       b = coef(res3)[2],
+       col = "black")
