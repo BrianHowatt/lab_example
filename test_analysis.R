@@ -17,6 +17,20 @@ abline(res, col = 'red')
 ## What if we add in Species?
 plot(iris$Sepal.Length, iris$Petal.Width, col = factor(iris$Species))
 
-# run a regression
-res <- lm(Petal.Width ~ Sepal.Length * Species, data = iris)
-summary(res)
+# re-run the regression
+res2 <- lm(Petal.Width ~ Sepal.Length * Species, data = iris)
+summary(res2)
+
+# plot the effects
+abline(a = coef(res2)[1] + coef(res2)[3],
+       b = coef(res2)[2] + coef(res2)[5],
+       col = "red")
+
+abline(a = coef(res2)[1] + coef(res2)[4],
+       b = coef(res2)[2] + coef(res2)[6],
+       col = "green")
+
+abline(a = coef(res2)[1],
+       b = coef(res2)[2],
+       col = "black")
+
